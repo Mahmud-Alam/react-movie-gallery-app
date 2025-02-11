@@ -24,10 +24,29 @@ function Home() {
     }
 
     loadPopularMovies();
-    
+
   }, [])
 
-  const handleSearch = () => {};
+  const handleSearch = async (e) => {
+    e.preventDefault();    
+    if(!searchQuery.trim()) return;
+    if(loading) return;
+
+    setLoading(true);
+    try {
+      const searchResults = await searchMovies(searchQuery);
+      setMovies(searchResults);
+      setError(null);
+    } catch (err) {
+      console.log(err);
+      setError("Failed to search movie...")
+    } finally {
+      setLoading(false);
+    }
+
+    // setSearchQuery("");
+
+  };
 
   return (
     <div className="home">
