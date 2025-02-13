@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import MovieCard from "../components/MovieCard";
 import { searchMovies, getPopularMovies } from "../services/api";
-import '../styles/Home.css'
+import "../styles/Home.css";
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -10,27 +10,25 @@ function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const loadPopularMovies = async() => {
-      try{
-        const popularMovies = await getPopularMovies()
+    const loadPopularMovies = async () => {
+      try {
+        const popularMovies = await getPopularMovies();
         setMovies(popularMovies);
-      } catch(err) {
+      } catch (err) {
         console.log(err);
-        setError("Failed to load movies...")
-
-      } finally{
+        setError("Failed to load movies...");
+      } finally {
         setLoading(false);
       }
-    }
+    };
 
     loadPopularMovies();
-
-  }, [])
+  }, []);
 
   const handleSearch = async (e) => {
-    e.preventDefault();    
-    if(!searchQuery.trim()) return;
-    if(loading) return;
+    e.preventDefault();
+    if (!searchQuery.trim()) return;
+    if (loading) return;
 
     setLoading(true);
     try {
@@ -39,13 +37,12 @@ function Home() {
       setError(null);
     } catch (err) {
       console.log(err);
-      setError("Failed to search movie...")
+      setError("Failed to search movie...");
     } finally {
       setLoading(false);
     }
 
     // setSearchQuery("");
-
   };
 
   return (
@@ -62,11 +59,20 @@ function Home() {
           Search
         </button>
       </form>
+
+      {error && <div className="error-message">{error}</div>}
+
+      {loading ? (
+        <div className="loading">Loading...</div>
+      ) : (
       <div className="movies-grid">
-        {movies.map( movie => movie.title.toLowerCase().includes(searchQuery) && (
-          <MovieCard movie={movie} key={movie.id} />
-        ))}
+        {movies.map((movie) =>
+            // movie.title.toLowerCase().includes(searchQuery) && (
+              <MovieCard movie={movie} key={movie.id} />
+            // )
+        )}
       </div>
+      )}
     </div>
   );
 }
