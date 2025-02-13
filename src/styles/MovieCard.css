@@ -67,10 +67,11 @@
   
   .favorite-btn:hover {
     background-color: rgba(0, 0, 0, 0.8);
+    border: none;
   }
   
   .favorite-btn.active {
-    color: #ff4757;
+    color: crimson;
   }
   
   .rating-select {

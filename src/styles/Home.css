@@ -30,16 +30,17 @@
   
   .search-button {
     padding: 0.75rem 1.5rem;
-    background-color: #e50914;
+    background-color: crimson;
     color: white;
     border-radius: 4px;
-    font-weight: 500;
+    font-weight: 600;
     transition: background-color 0.2s;
     white-space: nowrap;
+    border: none;
   }
   
   .search-button:hover {
-    background-color: #f40612;
+    background-color: rgb(240, 20, 60);
   }
   
   
