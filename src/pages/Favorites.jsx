@@ -1,6 +1,7 @@
 import "../styles/Favorites.css";
 import { useMovieContext } from "../contexts/MovieContext";
 import MovieCard from "../components/cards/MovieCard";
+import Rating from "../utils/Rating";
 
 function Favorites() {
   const { favorites } = useMovieContext();
@@ -15,7 +16,7 @@ function Favorites() {
           {favorites.map(
             (movie) => (
               // movie.title.toLowerCase().includes(searchQuery) && (
-              <MovieCard movie={movie} key={movie.id} />
+              <MovieCard movie={movie} ratingFunc={Rating} key={movie.id} />
             )
             // )
           )}
