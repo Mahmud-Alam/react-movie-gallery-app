@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import MovieCard from "../components/cards/MovieCard";
 import { searchMovies, getPopularMovies } from "../services/api";
+import Rating from "../utils/Rating";
 import "../styles/Home.css";
 
 function Home() {
@@ -65,13 +66,15 @@ function Home() {
       {loading ? (
         <div className="loading">Loading...</div>
       ) : (
-      <div className="movies-grid">
-        {movies.map((movie) =>
-            // movie.title.toLowerCase().includes(searchQuery) && (
-              <MovieCard movie={movie} key={movie.id} />
+        <div className="movies-grid">
+          {movies.map(
+            (movie) => (
+              // movie.title.toLowerCase().includes(searchQuery) && (
+              <MovieCard movie={movie} ratingFunc={Rating} key={movie.id} />
+            )
             // )
-        )}
-      </div>
+          )}
+        </div>
       )}
     </div>
   );

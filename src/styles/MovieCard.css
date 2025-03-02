@@ -48,6 +48,11 @@
   .movie-card:hover .movie-overlay {
     opacity: 1;
   }
+
+  .item_rating i {
+    color: orange;
+    padding-right: 5px;
+  }
   
   .favorite-btn {
     position: absolute;
@@ -84,21 +89,28 @@
     cursor: pointer;
     margin-top: 0.5rem;
   }
-  
+
   .movie-info {
     padding: 1rem;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  
+  .movie-info-text {
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
   }
   
-  .movie-info h3 {
+  .movie-info-text h3 {
     font-size: 1rem;
     margin: 0;
   }
   
-  .movie-info p {
+  .movie-info-text p {
     color: #999;
     font-size: 0.9rem;
   }

@@ -1,7 +1,13 @@
-import "../../styles/MovieCard.css";
 import { useMovieContext } from "../../contexts/MovieContext";
+import { customRound } from "../../utils/customRound";
+import 'bootstrap-icons/font/bootstrap-icons.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import "../../styles/MovieCard.css";
 
-function MovieCard({ movie }) {
+function MovieCard({ movie, ratingFunc }) {
+    console.log(movie);
+    
+  const rating = customRound(movie.vote_average / 2);
   const { isFavorite, addFavorites, removeFavorites } = useMovieContext();
   const favorite = isFavorite(movie.id);
 
@@ -28,12 +34,12 @@ function MovieCard({ movie }) {
         </div>
       </div>
       <div className="movie-info">
-        <div>
+        <div className="movie-info-text">
           <h3>{movie.title}</h3>
           <p>{movie.release_date?.split("-")[0]}</p>
         </div>
         <div className="item_rating">
-          {/* {ratingFunc && ratingFunc({ rating })} */}
+          {ratingFunc && ratingFunc({ rating })}
         </div>
       </div>
     </div>
