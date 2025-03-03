@@ -4,6 +4,7 @@ import { searchMovies, getPopularMovies } from "../services/api";
 import Rating from "../utils/Rating";
 import "../styles/Home.css";
 import { Link } from "react-router-dom";
+import { titleToSlug } from "../utils/slugify";
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -70,7 +71,7 @@ function Home() {
         <div className="movies-grid">
           {movies.map(
             (movie) => (
-              <Link key={movie.id} to={`/movies/${movie.slug}`}>
+              <Link key={movie.id} to={`/movies/${titleToSlug(movie.title)}`}>
               {/* // movie.title.toLowerCase().includes(searchQuery) && ( */}
               <MovieCard movie={movie} ratingFunc={Rating} key={movie.id} />
               </Link>
