@@ -1,8 +1,8 @@
-import { useMovieContext } from "../../contexts/MovieContext";
-import { customRound } from "../../utils/customRound";
+import { useMovieContext } from "../contexts/MovieContext";
+import { customRound } from "../utils/customRound";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 // import 'bootstrap/dist/css/bootstrap.min.css';
-import "../../styles/MovieCard.css";
+import "../styles/MovieCard.css";
 
 function MovieCard({ movie, ratingFunc }) {
     // console.log(movie);
