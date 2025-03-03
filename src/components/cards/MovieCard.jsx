@@ -5,7 +5,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import "../../styles/MovieCard.css";
 
 function MovieCard({ movie, ratingFunc }) {
-    console.log(movie);
+    // console.log(movie);
     
   const rating = customRound(movie.vote_average / 2);
   const { isFavorite, addFavorites, removeFavorites } = useMovieContext();

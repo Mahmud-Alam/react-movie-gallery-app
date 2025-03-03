@@ -1,47 +1,74 @@
 .navbar {
-    background-color: #121212;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #121212;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: absolute;
+  z-index: 1000;
+  transition: all 0.5s ease-in-out;
+}
+
+.navbar.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 0.5s ease-in-out;
+
+  animation-name: stickyTransition;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  box-shadow: 0 2px 3px rgba(96, 96, 96, 0.1);
+}
+
+@keyframes stickyTransition {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
   }
-  
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+
   .navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.2rem;
   }
-  
+
   .navbar-links {
-    display: flex;
-    gap: 2rem;
+    gap: 1rem;
   }
-  
+
   .nav-link {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.2s;
+    padding: 0.5rem;
   }
-  
-  .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  
-  @media (max-width: 768px) {
-    .navbar {
-      padding: 1rem;
-    }
-  
-    .navbar-brand {
-      font-size: 1.2rem;
-    }
-  
-    .navbar-links {
-      gap: 1rem;
-    }
-  
-    .nav-link {
-      padding: 0.5rem;
-    }
-  }
+}

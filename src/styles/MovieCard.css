@@ -50,6 +50,7 @@
   }
 
   .item_rating i {
+    font-size: 10px;
     color: orange;
     padding-right: 5px;
   }
@@ -106,13 +107,13 @@
   }
   
   .movie-info-text h3 {
-    font-size: 1rem;
+    font-size: 14px;
     margin: 0;
   }
   
   .movie-info-text p {
     color: #999;
-    font-size: 0.9rem;
+    font-size: 12px;
   }
   
   .user-rating {
