@@ -3,6 +3,7 @@ import MovieCard from "../components/MovieCard";
 import { searchMovies, getPopularMovies } from "../services/api";
 import Rating from "../utils/Rating";
 import "../styles/Home.css";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -69,8 +70,10 @@ function Home() {
         <div className="movies-grid">
           {movies.map(
             (movie) => (
-              // movie.title.toLowerCase().includes(searchQuery) && (
+              <Link key={movie.id} to={`/movies/${movie.slug}`}>
+              {/* // movie.title.toLowerCase().includes(searchQuery) && ( */}
               <MovieCard movie={movie} ratingFunc={Rating} key={movie.id} />
+              </Link>
             )
             // )
           )}
