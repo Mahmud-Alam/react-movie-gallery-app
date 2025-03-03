@@ -7,7 +7,7 @@ function Favorites() {
   const { favorites } = useMovieContext();
 
   if (favorites.length !== 0) {
-    console.log(favorites);
+    // console.log(favorites);
     
     return (
       <div className="favorites">
