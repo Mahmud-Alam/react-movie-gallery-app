@@ -5,6 +5,7 @@ import Favorites from "./pages/Favorites";
 import { MovieProvider } from "./contexts/MovieContext";
 import './styles/App.css';
 import MovieDetails from "./pages/MovieDetails";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/movies/:slug" element={<MovieDetails/>} />
         </Routes>
       </main>
+      <Footer/>
     </MovieProvider>
   );
 }
