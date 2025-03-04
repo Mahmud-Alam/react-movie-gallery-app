@@ -6,11 +6,13 @@
   
   .search-form {
     max-width: 600px;
+    width: 100%;
     margin: 0 auto 2rem;
     display: flex;
     gap: 1rem;
     padding: 0 1rem;
     box-sizing: border-box;
+    flex-wrap: wrap;
   }
   
   .search-input {
@@ -46,7 +48,7 @@
   
   @media (max-width: 639px) {
     .home {
-      padding: 1rem 0;
+      padding: 4rem 0;
     }
   
     .search-form {
