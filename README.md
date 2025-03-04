@@ -42,7 +42,6 @@ Search for movies by title:
 ![Movie Details Page](https://github.com/Mahmud-Alam/react-movie-gallery-app/blob/main/public/images/screenshots/07.png)
 
 ### 📱 Responsive Views
-- Fully optimized for all screen sizes:
 ![Responsive View](https://github.com/Mahmud-Alam/react-movie-gallery-app/blob/main/public/images/screenshots/08.png)
 ![Responsive View](https://github.com/Mahmud-Alam/react-movie-gallery-app/blob/main/public/images/screenshots/09.png)
 ![Responsive View](https://github.com/Mahmud-Alam/react-movie-gallery-app/blob/main/public/images/screenshots/10.png)
@@ -128,8 +127,8 @@ npm run lint
 ## 🌐 Deployment on Vercel
 The project is deployed on **Vercel** for fast and reliable hosting.
 
-🔗 **Live Demo:** [Movie Gallery App by Mahmud Alam](https://movie-app-mahmud.vercel.app/)
-🔗 **GitHub Repository:** [GitHub](https://github.com/Mahmud-Alam/react-movie-gallery-app)
+- 🔗 **Live Demo:** [Movie Gallery App by Mahmud Alam](https://movie-app-mahmud.vercel.app/)
+- 🔗 **GitHub Repository:** [GitHub](https://github.com/Mahmud-Alam/react-movie-gallery-app)
 
 ---
 
