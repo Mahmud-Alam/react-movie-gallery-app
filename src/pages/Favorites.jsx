@@ -2,6 +2,8 @@ import "../styles/Favorites.css";
 import { useMovieContext } from "../contexts/MovieContext";
 import MovieCard from "../components/MovieCard";
 import Rating from "../utils/Rating";
+import { Link } from "react-router-dom";
+import { titleToSlug } from "../utils/slugify";
 
 function Favorites() {
   const { favorites } = useMovieContext();
@@ -13,8 +15,10 @@ function Favorites() {
         <div className="movies-grid">
           {favorites.map(
             (movie) => (
-              // movie.title.toLowerCase().includes(searchQuery) && (
+              <Link key={movie.id} to={`/movies/${titleToSlug(movie.title)}`}>
+              {/* // movie.title.toLowerCase().includes(searchQuery) && ( */}
               <MovieCard movie={movie} ratingFunc={Rating} key={movie.id} />
+              </Link>
             )
             // )
           )}

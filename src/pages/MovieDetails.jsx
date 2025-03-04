@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { getPopularMovies } from "../services/api"; // API call
 import { titleToSlug } from "../utils/slugify";
 import "../styles/MovieDetails.css";
+import Rating from "../utils/Rating";
+import { customRound } from "../utils/customRound";
 
 function MovieDetails() {
   const { slug } = useParams(); // Get slug from URL
@@ -39,7 +41,9 @@ function MovieDetails() {
     <div className="movie-details">
       <div
         className="backdrop"
-        style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path})` }}
+        style={{
+          backgroundImage: `url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path})`,
+        }}
       >
         <div className="overlay">
           <h1 className="movie-title">{movie.title}</h1>
@@ -61,14 +65,29 @@ function MovieDetails() {
           <h3>Genres</h3>
           <div className="genres">
             {movie.genre_ids.map((id) => (
-              <span key={id} className="genre-badge">Genre {id}</span>
+              <span key={id} className="genre-badge">
+                Genre {id}
+              </span>
             ))}
           </div>
 
           <div className="ratings">
-            <p>⭐ {movie.vote_average.toFixed(1)} / 10</p>
-            <p>Votes: {movie.vote_count}</p>
-            <p>Popularity: {movie.popularity}</p>
+            <div className="star_rating">
+              <span className="bullet-text">Movie Rating: </span>
+              <Rating rating={customRound(movie.vote_average / 2)}/>
+            </div>
+            <p>
+              <span className="bullet-text">IMDb Rating: </span>⭐{" "}
+              {movie.vote_average.toFixed(1)} / 10
+            </p>
+            <p>
+              <span className="bullet-text">Votes: </span>
+              {movie.vote_count}
+            </p>
+            <p>
+              <span className="bullet-text">Popularity: </span>
+              {movie.popularity}
+            </p>
           </div>
         </div>
       </div>

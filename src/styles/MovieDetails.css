@@ -56,6 +56,15 @@
   .details h2, .details h3 {
     color: #ffcc00;
   }
+
+  .details h3{
+    margin-top: 20px;
+  }
+
+.bullet-text{
+  color: #ffcc00;
+  font-weight: 500;
+}
   
   .details p {
     font-size: 1rem;
@@ -75,9 +84,25 @@
     font-size: 0.9rem;
     display: inline-block;
   }
+
+  .ratings{
+    margin-top: 30px;
+  }
   
   .ratings p {
     margin-top: 10px;
     font-size: 1.1rem;
   }
   
+  .ratings i {
+    color: orange;
+    padding-right: 5px;
+  }
+
+  .star_rating{
+    margin-top: 10px;
+    font-size: 1.1rem;
+    display: flex;
+  align-items: center; /* Align items in the center */
+  gap: 8px;
+  }
