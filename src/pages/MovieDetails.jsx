@@ -47,7 +47,13 @@ function MovieDetails() {
       >
         <div className="overlay">
           <h1 className="movie-title">{movie.title}</h1>
-          <p className="release-date">Release Date: {movie.release_date}</p>
+          <p className="overlay-text">
+            Released: {movie.release_date?.split("-")[0]}
+          </p>
+          <div className="star_rating">
+            <p className="overlay-text">Rating: </p>
+            <Rating rating={customRound(movie.vote_average / 2)} />
+          </div>
         </div>
       </div>
 
@@ -72,10 +78,6 @@ function MovieDetails() {
           </div>
 
           <div className="ratings">
-            <div className="star_rating">
-              <span className="bullet-text">Movie Rating: </span>
-              <Rating rating={customRound(movie.vote_average / 2)}/>
-            </div>
             <p>
               <span className="bullet-text">IMDb Rating: </span>⭐{" "}
               {movie.vote_average.toFixed(1)} / 10
