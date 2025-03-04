@@ -70,6 +70,7 @@
 .details {
   flex: 1;
   min-width: 300px;
+  text-align: justify;
 }
 
 .details h2,
